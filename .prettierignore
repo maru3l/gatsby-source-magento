@@ -1,0 +1,13 @@
+# Project dependencies
+.cache
+node_modules
+**/node_modules/**
+static
+*.min.js
+
+# Build directory
+public
+/fetch
+/normalize
+/utils
+/gatsby-node.js

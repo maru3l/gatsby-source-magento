@@ -1,0 +1,12 @@
+# Project dependencies
+.cache
+.env
+node_modules
+yarn-error.log
+/fetch
+/normalize
+/utils
+/gatsby-node.js
+
+# Build directory
+.DS_Store

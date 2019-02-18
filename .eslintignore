@@ -1,0 +1,11 @@
+# Project dependencies
+.cache
+node_modules
+static
+
+# Build directory
+public
+/fetch
+/normalize
+/utils
+/gatsby-node.js
