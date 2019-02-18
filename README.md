@@ -23,7 +23,7 @@ Magento2 sites using the
 
 ## How to use
 
-First, you need a way to pass environment variables to the build process, so secrets and other secured data aren't committed to source control. We recommend using [`dotenv`][dotenv] which will then expose environment variables. [Read more about dotenv and using environment variables here][envvars]. Then we can _use_ these environment variables and configure our plugin.
+First, you need a way to pass environment variables to the build process, so secrets and other secured data aren't committed to source control. We recommend using [`dotenv`](https://www.npmjs.com/package/dotenv) which will then expose environment variables. [Read more about dotenv and using environment variables here](https://www.gatsbyjs.org/docs/environment-variables/). Then we can _use_ these environment variables and configure our plugin.
 
 ```javascript
 // In your gatsby-config.js
@@ -33,14 +33,6 @@ module.exports = {
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from magento.
      */
-    {
-      options: {
-        login: {
-          username: process.env.MAGENTO_API_USER,
-          password: process.env.MAGENTO_API_PASSWORD,
-        },
-      },
-    },
     {
       resolve: "gatsby-source-magento2",
       options: {
@@ -324,6 +316,10 @@ exports.createPages = ({ graphql, actions }) => {
 
 ## Todo
 [] Normalize `updated_at` and `created_at`
+
 [] add Verbos mode
+
 [] add log
+
 [] add `Site's `gatsby-node.js` example` in README file
+
