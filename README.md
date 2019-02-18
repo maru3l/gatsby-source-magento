@@ -7,6 +7,7 @@ Magento2 sites using the
 ## Features
 
 - Pulls data from Magento2 sites
+
   - Store Configuration
   - Categories
   - Products
@@ -17,9 +18,9 @@ Magento2 sites using the
 - Link categories with products
 - Link images with products
 
-<!-- ## Install
+## Install
 
-`npm install --save gatsby-source-magento` -->
+`npm install --save gatsby-source-magento`
 
 ## How to use
 
@@ -34,19 +35,18 @@ module.exports = {
      * plugins. Here the site sources its data from magento.
      */
     {
-      resolve: "gatsby-source-magento",
+      resolve: 'gatsby-source-magento',
       options: {
         /*
          * The base URL of the Magento2 site without the trailingslash and the protocol. This is required.
          * Example : 'www.example-site.com'
          */
-        baseUrl: "www.example-site.com",
+        baseUrl: 'www.example-site.com',
         // The protocol. This can be http or https.
-        protocol: "http",
+        protocol: 'http',
         login: {
-
-          username: "admin",
-          password: "password",
+          username: 'admin',
+          password: 'password',
         },
       },
     },
@@ -315,11 +315,11 @@ exports.createPages = ({ graphql, actions }) => {
 <!-- ## Troubleshooting -->
 
 ## Todo
+
 [] Normalize `updated_at` and `created_at`
 
 [] add Verbos mode
 
 [] add log
 
-[] add `Site's `gatsby-node.js` example` in README file
-
+[] add `Site's`gatsby-node.js`example` in README file
