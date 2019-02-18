@@ -1,4 +1,4 @@
-# gatsby-source-wordpress
+# gatsby-source-magento
 
 Source plugin for pulling data into [Gatsby](https://github.com/gatsbyjs) from
 Magento2 sites using the
@@ -19,7 +19,7 @@ Magento2 sites using the
 
 <!-- ## Install
 
-`npm install --save gatsby-source-magento2` -->
+`npm install --save gatsby-source-magento` -->
 
 ## How to use
 
@@ -34,7 +34,7 @@ module.exports = {
      * plugins. Here the site sources its data from magento.
      */
     {
-      resolve: "gatsby-source-magento2",
+      resolve: "gatsby-source-magento",
       options: {
         /*
          * The base URL of the Magento2 site without the trailingslash and the protocol. This is required.
