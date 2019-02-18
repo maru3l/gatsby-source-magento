@@ -3,6 +3,11 @@
   "description": "Gatsby source plugin for building websites using Magento as a data source.",
   "version": "1.0.0",
   "author": "Marc-Antoine Ruel <hello@marcantoineruel.com>",
+  "bugs": {
+    "url": "https://github.com/maru3l/gatsby-source-magento2/issues"
+  },
+  "homepage": "https://github.com/maru3l/gatsby-source-magento2#readme",
+  "repository": "https://github.com/maru3l/gatsby-source-magento2",
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",
     "format": "prettier --write 'src/**/*.js' 'README.md'",
