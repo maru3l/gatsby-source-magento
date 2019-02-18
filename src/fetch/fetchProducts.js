@@ -25,11 +25,6 @@ export default async function(storeViewConfig) {
     })
 
     if (res.data && res.data.items) {
-      console.log(
-        `store View ${storeViewConfig.locale} have ${
-          res.data.items.length
-        } items`,
-      )
       items = res.data.items
     }
   } catch (error) {
