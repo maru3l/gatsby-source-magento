@@ -36,6 +36,7 @@ export default async function(storeViewConfig) {
     children: item.children.split(',').filter(str => str.length),
     __type: 'magento__category',
     storeViewConfig___NODE: storeViewConfig.id,
+    storeViewConfigCode: storeViewConfig.code,
     magento_id: item.id,
     parent: null,
   }))

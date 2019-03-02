@@ -35,6 +35,7 @@ export default async function(storeViewConfig) {
     ...item,
     __type: 'magento__product',
     storeViewConfig___NODE: storeViewConfig.id,
+    storeViewConfigCode: storeViewConfig.code,
     magento_id: item.id,
     parent: null,
     children: [],
