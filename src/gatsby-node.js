@@ -14,6 +14,10 @@ import mapProductWithConfigurableProducts from './normalize/mapProductWithConfig
 import createMediaNode from './normalize/createMediaNode'
 import fetchStoreConfig from './fetch/fetchStoreConfig'
 import downloadMedias from './normalize/downloadMedias'
+import standardizeDates from './normalize/standardizeDates'
+import fetchProductAttributes from './fetch/fetchProductAttributes'
+import mapProductConfigurationOptions from './normalize/mapProductConfigurationOptions'
+import mapProductMediaWithMedia from './normalize/mapProductMediaWithMedia'
 
 exports.sourceNodes = async (
   { actions, store, cache, createNodeId },
@@ -48,12 +52,14 @@ exports.sourceNodes = async (
         ...acc,
         fetchProduct(storeViewConfig),
         fetchCategories(storeViewConfig),
+        fetchProductAttributes(storeViewConfig),
       ],
       [],
     ),
   ).then(res => [].concat(...res))
-
   entities = [...entities, ...storeConfigs]
+  entities = createMediaNode(entities)
+
   entities = createGatsbyIds(createNodeId, entities)
   entities = customAttributes(entities)
   entities = extensionAttributes(entities)
@@ -61,7 +67,9 @@ exports.sourceNodes = async (
   entities = mapWithChildrens(entities)
   entities = mapProductsWithCategories(entities)
   entities = mapProductWithConfigurableProducts(entities)
-  entities = createMediaNode(createNodeId, entities)
+  entities = mapProductConfigurationOptions(entities)
+  entities = mapProductMediaWithMedia(entities)
+
   entities = await downloadMedias(
     entities,
     store,
@@ -70,7 +78,13 @@ exports.sourceNodes = async (
     createNodeId,
   )
 
+  entities = standardizeDates(entities)
+
   entities.forEach(e => {
+    if (e.storeViewConfigCode) {
+      delete e.storeViewConfigCode
+    }
+
     createNode({
       ...e,
       internal: {

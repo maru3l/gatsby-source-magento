@@ -15,11 +15,13 @@ export default async (nodes, store, cache, createNode, createNodeId) =>
             createNodeId,
           })
         } catch (error) {
-          console.log(error)
+          console.error(error)
         }
 
         if (fileNode) {
           node.localFile___NODE = fileNode.id
+
+          delete node.file
         }
       }
 
