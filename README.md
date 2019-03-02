@@ -316,8 +316,6 @@ exports.createPages = ({ graphql, actions }) => {
 
 ## Todo
 
-[] Normalize `updated_at` and `created_at`
-
 [] add Verbos mode
 
 [] add log
