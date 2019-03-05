@@ -5,12 +5,12 @@ export default async (nodes, store, cache, createNode, createNodeId) =>
     nodes.map(async node => {
       let fileNodeID
       if (node.__type === `magento__media`) {
-        const mediaDataCacheKey = `magento-media-${node.wordpress_id}`
+        const mediaDataCacheKey = `magento-media-${node.magento_id}`
         const cacheMediaData = await cache.get(mediaDataCacheKey)
 
         // If we have cached media data and it wasn't modified, reuse
         // previously created file node to not try to redownload
-        if (cacheMediaData && node.modified === cacheMediaData.modified) {
+        if (cacheMediaData) {
           fileNodeID = cacheMediaData.fileNodeID
           touchNode({ nodeId: cacheMediaData.fileNodeID })
         }
@@ -28,15 +28,14 @@ export default async (nodes, store, cache, createNode, createNodeId) =>
             })
 
             if (fileNode) {
-              fileNodeID = fileNodnode.id
+              fileNodeID = fileNode.id
 
               await cache.set(mediaDataCacheKey, {
                 fileNodeID,
-                modified: node.modified,
               })
             }
           } catch (e) {
-            // Ignore
+            console.error(e)
           }
         }
       }
