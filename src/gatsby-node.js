@@ -20,7 +20,7 @@ import mapProductConfigurationOptions from './normalize/mapProductConfigurationO
 import mapProductMediaWithMedia from './normalize/mapProductMediaWithMedia'
 
 exports.sourceNodes = async (
-  { actions, store, cache, createNodeId },
+  { actions, store, cache, createNodeId, touchNode },
   configOptions,
 ) => {
   const { createNode } = actions
@@ -76,6 +76,7 @@ exports.sourceNodes = async (
     cache,
     createNode,
     createNodeId,
+    touchNode,
   )
 
   entities = standardizeDates(entities)

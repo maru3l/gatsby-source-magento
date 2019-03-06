@@ -1,6 +1,13 @@
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
-export default async (nodes, store, cache, createNode, createNodeId) =>
+export default async (
+  nodes,
+  store,
+  cache,
+  createNode,
+  createNodeId,
+  touchNode,
+) =>
   Promise.all(
     nodes.map(async node => {
       let fileNodeID
