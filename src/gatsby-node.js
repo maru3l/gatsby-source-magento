@@ -18,6 +18,7 @@ import standardizeDates from './normalize/standardizeDates'
 import fetchProductAttributes from './fetch/fetchProductAttributes'
 import mapProductConfigurationOptions from './normalize/mapProductConfigurationOptions'
 import mapProductMediaWithMedia from './normalize/mapProductMediaWithMedia'
+import fetchCountries from './fetch/fetchCountries'
 
 exports.sourceNodes = async (
   { actions, store, cache, createNodeId, touchNode },
@@ -53,6 +54,7 @@ exports.sourceNodes = async (
         fetchProduct(storeViewConfig),
         fetchCategories(storeViewConfig),
         fetchProductAttributes(storeViewConfig),
+        fetchCountries(storeViewConfig),
       ],
       [],
     ),
