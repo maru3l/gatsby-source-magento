@@ -19,6 +19,7 @@ import fetchProductAttributes from './fetch/fetchProductAttributes'
 import mapProductConfigurationOptions from './normalize/mapProductConfigurationOptions'
 import mapProductMediaWithMedia from './normalize/mapProductMediaWithMedia'
 import fetchCountries from './fetch/fetchCountries'
+import mapProductLinks from './normalize/mapProductLinks'
 
 exports.sourceNodes = async (
   { actions, store, cache, createNodeId, touchNode },
@@ -70,6 +71,7 @@ exports.sourceNodes = async (
   entities = mapProductsWithCategories(entities)
   entities = mapProductWithConfigurableProducts(entities)
   entities = mapProductConfigurationOptions(entities)
+  entities = mapProductLinks(entities)
   entities = mapProductMediaWithMedia(entities)
 
   entities = await downloadMedias(
