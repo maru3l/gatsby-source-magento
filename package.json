@@ -1,7 +1,7 @@
 {
   "name": "gatsby-source-magento",
   "description": "Gatsby source plugin for building websites using Magento as a data source.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "author": "Marc-Antoine Ruel <hello@marcantoineruel.com> (https://www.marcantoineruel.com)",
   "bugs": {
     "url": "https://github.com/maru3l/gatsby-source-magento/issues"

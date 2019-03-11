@@ -12,6 +12,7 @@ export default function(entities) {
             sku === link.linked_product_sku,
         ).id
 
+        delete link.linked_product_sku
         delete link.sku
 
         return link
