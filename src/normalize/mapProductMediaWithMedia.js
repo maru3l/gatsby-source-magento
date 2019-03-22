@@ -2,13 +2,13 @@ export default function(entities) {
   const medias = entities.filter(({ __type }) => __type === 'magento__media')
 
   return entities.map(entity => {
-    const { storeViewConfigCode } = entity
+    // const { storeViewConfigCode } = entity
 
     if (entity.__type === 'magento__product') {
       if (entity.image && entity.image !== 'no_selection') {
         const { id } = medias.find(
           m =>
-            m.storeViewConfigCode === storeViewConfigCode &&
+            // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.image,
         )
 
@@ -19,7 +19,7 @@ export default function(entities) {
       if (entity.small_image && entity.small_image !== 'no_selection') {
         const { id } = medias.find(
           m =>
-            m.storeViewConfigCode === storeViewConfigCode &&
+            // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.small_image,
         )
 
@@ -30,7 +30,7 @@ export default function(entities) {
       if (entity.thumbnail && entity.thumbnail !== 'no_selection') {
         const { id } = medias.find(
           m =>
-            m.storeViewConfigCode === storeViewConfigCode &&
+            // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.thumbnail,
         )
 
@@ -41,7 +41,7 @@ export default function(entities) {
       if (entity.swatch_image && entity.swatch_image !== 'no_selection') {
         const { id } = medias.find(
           m =>
-            m.storeViewConfigCode === storeViewConfigCode &&
+            // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.swatch_image,
         )
 
@@ -57,7 +57,7 @@ export default function(entities) {
           e => {
             const { id } = medias.find(
               m =>
-                m.storeViewConfigCode === storeViewConfigCode &&
+                // m.storeViewConfigCode === storeViewConfigCode &&
                 m.file === e.file,
             )
 

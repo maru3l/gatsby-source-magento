@@ -31,7 +31,13 @@ export default function(entities) {
           __type: 'magento__media',
         }
 
-        medias = [...medias, obj]
+        const index = medias.findIndex(
+          ({ source_url: url }) => url === sourceUrl,
+        )
+
+        if (index === -1) {
+          medias = [...medias, obj]
+        }
       })
     }
 
