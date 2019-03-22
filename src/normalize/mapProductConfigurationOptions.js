@@ -36,13 +36,15 @@ export default function(entities) {
               ({ value }) => Number(index) === Number(value),
             )
 
-            const product = configurableProduct.find(
-              ({ [attributeCode]: code }) => Number(code) === Number(index),
-            )
+            const productsId = configurableProduct
+              .filter(
+                ({ [attributeCode]: code }) => Number(code) === Number(index),
+              )
+              .map(({ id }) => id)
 
             return {
               ...label,
-              product___NODE: product.id,
+              products___NODE: productsId,
             }
           })
 
