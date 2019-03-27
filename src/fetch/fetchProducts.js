@@ -32,12 +32,14 @@ export default async function(storeViewConfig) {
   }
 
   return items.map(item => ({
-    ...item,
     __type: 'magento__product',
     storeViewConfig___NODE: storeViewConfig.id,
     storeViewConfigCode: storeViewConfig.code,
     magento_id: item.id,
     parent: null,
     children: [],
+    special_price: null,
+    special_from_date: null,
+    ...item,
   }))
 }

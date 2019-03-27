@@ -25,7 +25,7 @@ exports.sourceNodes = async (
   { actions, store, cache, createNodeId, touchNode },
   configOptions,
 ) => {
-  const { createNode } = actions
+  const { createNode, createTypes } = actions
   const {
     baseUrl,
     protocol,
@@ -84,6 +84,14 @@ exports.sourceNodes = async (
   )
 
   entities = standardizeDates(entities)
+
+  const typeDefs = `
+    type magento__product implements Node {
+      special_price: Int
+      special_from_date: Int
+    }
+  `
+  createTypes(typeDefs)
 
   entities.forEach(e => {
     if (e.storeViewConfigCode) {
