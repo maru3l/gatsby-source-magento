@@ -12,11 +12,16 @@ Magento2 sites using the
   - Categories
   - Products
   - Images from Products
+  - Countries
+  - Product attributes
+  - Review if the modules [divante/magento2-review-api](https://github.com/DivanteLtd/magento2-review-api) is installed
 
 - Link products with Store Configuration
 - Link categories with Store Configuration
 - Link categories with products
 - Link images with products
+- Link review with product
+- Link products with configurable product
 
 ## Install
 
