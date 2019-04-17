@@ -91,7 +91,7 @@ exports.sourceNodes = async (
 
   const typeDefs = `
     type magento__product implements Node {
-      special_price: Int
+      special_price: Float
       special_from_date: Int
     }
   `
