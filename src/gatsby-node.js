@@ -22,6 +22,7 @@ import fetchCountries from './fetch/fetchCountries'
 import mapProductLinks from './normalize/mapProductLinks'
 import fetchReviews from './fetch/fetchReviews'
 import mapReviewWithProducts from './normalize/mapReviewWithProducts'
+import fetchInventorySourceItems from './fetch/fetchInventorySourceItems'
 
 exports.sourceNodes = async (
   { actions, store, cache, createNodeId, touchNode },
@@ -77,6 +78,8 @@ exports.sourceNodes = async (
   entities = mapProductLinks(entities)
   entities = mapReviewWithProducts(entities)
   entities = mapProductMediaWithMedia(entities)
+
+  entities = await fetchInventorySourceItems(entities)
 
   entities = await downloadMedias(
     entities,
