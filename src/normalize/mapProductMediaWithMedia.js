@@ -6,46 +6,53 @@ export default function(entities) {
 
     if (entity.__type === 'magento__product') {
       if (entity.image && entity.image !== 'no_selection') {
-        const { id } = medias.find(
+        const media = medias.find(
           m =>
             // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.image,
         )
 
-        entity.image___NODE = id
+        if (media) {
+          entity.image___NODE = media.id
+        }
       }
       delete entity.image
 
       if (entity.small_image && entity.small_image !== 'no_selection') {
-        const { id } = medias.find(
+        const media = medias.find(
           m =>
             // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.small_image,
         )
 
-        entity.small_image___NODE = id
+        if (media) {
+          entity.small_image___NODE = media.id
+        }
       }
       delete entity.small_image
 
       if (entity.thumbnail && entity.thumbnail !== 'no_selection') {
-        const { id } = medias.find(
+        const media = medias.find(
           m =>
             // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.thumbnail,
         )
-
-        entity.thumbnail___NODE = id
+        if (media) {
+          entity.thumbnail___NODE = media.id
+        }
       }
       delete entity.thumbnail
 
       if (entity.swatch_image && entity.swatch_image !== 'no_selection') {
-        const { id } = medias.find(
+        const media = medias.find(
           m =>
             // m.storeViewConfigCode === storeViewConfigCode &&
             m.file === entity.swatch_image,
         )
 
-        entity.swatch_image___NODE = id
+        if (media) {
+          entity.swatch_image___NODE = media.id
+        }
       }
       delete entity.swatch_image
 
@@ -60,7 +67,6 @@ export default function(entities) {
                 // m.storeViewConfigCode === storeViewConfigCode &&
                 m.file === e.file,
             )
-
             return id
           },
         )
