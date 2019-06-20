@@ -28,7 +28,7 @@ export default async function(storeViewConfig) {
       items = res.data.items
     }
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 
   return items.map(item => ({

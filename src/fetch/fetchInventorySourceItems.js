@@ -30,7 +30,7 @@ export default async function(entities) {
       items = res.data.items
     }
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 
   return entities.map(entity => {

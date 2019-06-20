@@ -45,7 +45,7 @@ exports.sourceNodes = async (
 
     axios.defaults.headers.common.Authorization = `Bearer ${token}`
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 
   let storeConfigs = await fetchStoreConfig()
