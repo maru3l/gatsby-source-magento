@@ -1,7 +1,7 @@
 {
   "name": "gatsby-source-magento",
   "description": "Gatsby source plugin for building websites using Magento as a data source.",
-  "version": "1.6.2",
+  "version": "1.6.5",
   "author": "Marc-Antoine Ruel <hello@marcantoineruel.com> (https://www.marcantoineruel.com)",
   "bugs": {
     "url": "https://github.com/maru3l/gatsby-source-magento/issues"
@@ -27,11 +27,11 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "axios": "^0.19.0",
-    "babel-preset-gatsby-package": "^0.2.0",
+    "@babel/core": "^7.4.4",
+    "axios": "^0.18.0",
+    "babel-preset-gatsby-package": "^0.1.4",
     "cross-env": "^5.2.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.17.0"
   },
   "peerDependencies": {
     "gatsby": "^2.2.0",
