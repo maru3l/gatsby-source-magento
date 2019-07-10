@@ -40,6 +40,7 @@ export default async function(storeViewConfig) {
     children: [],
     special_price: null,
     special_from_date: null,
+    special_to_date: null,
     ...item,
   }))
 }

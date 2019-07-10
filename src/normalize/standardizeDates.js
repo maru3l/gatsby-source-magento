@@ -8,6 +8,14 @@ export default function(entities) {
       entity.updated_at = new Date(entity.updated_at).toJSON()
     }
 
+    if (entity.special_from_date) {
+      entity.special_from_date = new Date(entity.special_from_date).toJSON()
+    }
+
+    if (entity.special_to_date) {
+      entity.special_to_date = new Date(entity.special_to_date).toJSON()
+    }
+
     return entity
   })
 }

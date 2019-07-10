@@ -95,7 +95,8 @@ exports.sourceNodes = async (
   const typeDefs = `
     type magento__product implements Node {
       special_price: Float
-      special_from_date: Int
+      special_from_date: Date
+      special_to_date: Date
     }
   `
   createTypes(typeDefs)
