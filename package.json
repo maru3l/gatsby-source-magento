@@ -28,7 +28,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-preset-gatsby-package": "^0.1.4",
     "cross-env": "^5.2.0",
     "prettier": "^1.17.0"
